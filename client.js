@@ -1,6 +1,8 @@
 const BUILDING_ACTION = 'building';
 const BUILT_ACTION = 'built';
 
+let firstRun = false;
+
 // Note the below template uses the website variable, which is injected by the
 // loader source code (index.js)
 
@@ -76,7 +78,6 @@ overlay.innerHTML = `
 </div>
 `;
 
-document.body.appendChild( overlay );
 
 // How does this work? The contents of this file are concatenated along with
 // the contents of https://github.com/glenjamin/webpack-hot-middleware/blob/master/client.js
@@ -85,10 +86,20 @@ document.body.appendChild( overlay );
 // proud.
 module.exports.subscribeAll(function subAll( message ) {
     if( message.action === BUILDING_ACTION ) {
+
+        if( !firstRun ) {
+            document.body.appendChild( overlay );
+            firstRun = true;
+        }
+
         overlay.style.display = 'block';
         overlay.querySelector('iframe').contentWindow.focus();
+
     } else if( message.action === BUILT_ACTION ) {
+
+        window.focus();
         overlay.style.display = 'none';
+
     }
 });
 
