@@ -6,7 +6,7 @@ Shows [2048](https://gabrielecirulli.github.io/2048/) in an iFrame during hot re
 
 ## Requirements
 
-This project **requires** [webpack-hot-midleware](https://github.com/glenjamin/webpack-hot-middleware) with **at least version 2.12.0** (see [this PR](https://github.com/glenjamin/webpack-hot-middleware/pull/112)). It **won't work** with the vanilla Webpack dev server.
+This project **requires** [webpack-hot-middleware](https://github.com/glenjamin/webpack-hot-middleware) with **at least version 2.12.0** (see [this PR](https://github.com/glenjamin/webpack-hot-middleware/pull/112)). It **won't work** with the vanilla Webpack dev server.
 
 ## How To Use
 
@@ -14,7 +14,7 @@ This project **requires** [webpack-hot-midleware](https://github.com/glenjamin/w
 npm install --save-dev webpack-hot-2048-loader
 ```
 
-In your development Webpack config file, find your entry point where you include [webpack-hot-midleware](https://github.com/glenjamin/webpack-hot-middleware). It will look something like:
+In your development Webpack config file, find your entry point where you include [webpack-hot-middleware](https://github.com/glenjamin/webpack-hot-middleware). It will look something like:
 
 ```javascript
 entry: {
